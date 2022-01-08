@@ -24,12 +24,12 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         
-        <TextBlock FontWeight="Bold" FontSize="16" Grid.Row="0">
+        <TextBlock FontWeight="Bold" FontSize="28" Grid.Row="0" FontFamily="Calibri Light" Foreground="#FF0083C2">
             <Run>Upload files to</Run>
             <Run Text="{Binding ViewerName}"></Run>
         </TextBlock>
 
-        <TextBlock Grid.Row="1" Margin="0,10,0,0">
+        <TextBlock Grid.Row="1" Margin="0,10,0,0" FontFamily="Segoe UI" FontSize="13" Foreground="#FF747272">
             Current Uploads:
         </TextBlock>
 
@@ -61,7 +61,7 @@
             </ScrollViewer>
         </Border>
 
-        <Button Grid.Row="3" Margin="0,10,0,0" Height="60" Style="{StaticResource NormalButton}" Command="{Binding OpenFileUploadDialog}">
+        <Button Grid.Row="3" Margin="0,10,0,0" Height="60" Style="{StaticResource NormalButton}" Command="{Binding OpenFileUploadDialog}" Foreground="#FF1D90F1" FontFamily="Calibri" FontSize="18">
             Click here to upload files.
         </Button>
     </Grid>
