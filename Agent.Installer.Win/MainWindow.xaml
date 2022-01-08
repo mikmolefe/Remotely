@@ -12,14 +12,16 @@
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
-        Title="Remotely Installer" Height="335" Width="500"  Icon="{Binding Icon}">
+        BorderBrush="#FFB2B2B2"
+        BorderThickness="1"
+        Title="Remotely Installer" Height="463" Width="350"  Icon="{Binding Icon}">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <Window.DataContext>
         <ViewModels:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
+    <Grid HorizontalAlignment="Center" Margin="0,0,0,8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
@@ -30,35 +32,37 @@
             <DockPanel Margin="10,0,0,0">
                 <DockPanel>
                     <Image Height="50" Width="50"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                    <TextBlock Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center">
-                        <Run Text="{Binding ProductName}"></Run>
-                        <Run Text="Installer"></Run>
-                    </TextBlock>
+                    <TextBlock Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" FontFamily="Calibri Light"><Run Text="Lentloro "/><Run Text="Support "/></TextBlock>
                 </DockPanel>
-                <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" />
-                <Button Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}"/>
+                <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" FontWeight="Normal" />
+                <Button Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" FontWeight="Normal"/>
             </DockPanel>
         </Border>
-        <Grid Grid.Row="1" Margin="10,15,10,0">
+        <Grid Grid.Row="1" Margin="10,15,10,0" HorizontalAlignment="Center" Height="388" VerticalAlignment="Top">
 
-            <StackPanel>
-                <TextBlock Style="{StaticResource SectionHeader}" Text="{Binding HeaderMessage}" Margin="0,0,0,10"></TextBlock>
-                <Grid Margin="25,5,0,0">
+            <StackPanel Margin="0,0,10,0" Height="297.5" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource SectionHeader}" Margin="25,10,0,10" FontWeight="Normal" FontFamily="Calibri Light" FontSize="28" Foreground="#FF0083C2" HorizontalAlignment="Left"><Run Text="Install the S"/><Run Text="ervice"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="19.333" Margin="26,0,0,0" TextWrapping="Wrap" Width="240.25" Text="Unattended Remote Access Support" FontSize="14"/>
+                <Grid Margin="25,10,19.667,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="197*" />
+                        <ColumnDefinition Width="106*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="20" />
-                        <RowDefinition/>
-                        <RowDefinition Height="20" />
-                        <RowDefinition/>
+                        <RowDefinition Height="11*"/>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="46"/>
+                        <RowDefinition Height="32*"/>
+                        <RowDefinition Height="37" />
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="12" />
+                        <RowDefinition Height="22*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-                        <TextBlock FontSize="14">Server URL:</TextBlock>
-                        
+                    <StackPanel Orientation="Horizontal" RenderTransformOrigin="1.546,-1.775" Margin="0,19.047,0,6.333" HorizontalAlignment="Left" Width="144.721" Height="20.62" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2">
+                        <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#FF747272"><Run Text="Server URL"/><Run Text=":"/></TextBlock>
+
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
                                 FontSize="14" 
@@ -67,18 +71,17 @@
                                 Padding="3"
                                 Cursor="Hand"
                                 Click="ShowServerUrlHelp">
-                            <TextBlock Text="&#xE897;" 
-                             FontWeight="Bold"
+                            <TextBlock Text="&#xE897;"
                              FontFamily="Segoe MDL2 Assets" 
-                             PreviewMouseUp="ShowServerUrlHelp"></TextBlock>
+                             PreviewMouseUp="ShowServerUrlHelp" FontSize="12" VerticalAlignment="Center" Foreground="#FF0083C2"/>
                         </Button>
                     </StackPanel>
-                    
-                    
-                    <TextBox Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ServerUrl}" FontSize="14" />
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
-                        <TextBlock FontSize="14">Organization ID</TextBlock>
+
+                    <TextBox Grid.Row="4" TextWrapping="Wrap" Text="{Binding ServerUrl}" FontSize="14" Margin="0" Padding="8,6" Grid.ColumnSpan="2" BorderBrush="#FF85CAF1" />
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" Margin="0,13.88,0,4.5" HorizontalAlignment="Left" Width="136.054" VerticalAlignment="Center" Height="18.62">
+                        <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#FF747272"><Run Text="Organization ID"/><Run Text=":"/></TextBlock>
 
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
@@ -88,16 +91,16 @@
                                 Padding="3"
                                 Cursor="Hand"
                                 Click="ShowOrganizationIdHelp">
-                            <TextBlock Text="&#xE897;" 
-                             FontWeight="Bold"
-                             FontFamily="Segoe MDL2 Assets"></TextBlock>
+                            <TextBlock Text="&#xE897;"
+                             FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="12" Foreground="#FF0083C2"/>
                         </Button>
                     </StackPanel>
-                    
-                    <TextBox  Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding OrganizationID}" FontSize="14" />
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="4">
-                        <TextBlock FontSize="14">Support Shortcut</TextBlock>
+                    <TextBox Grid.Row="6" TextWrapping="Wrap" Text="{Binding OrganizationID}" FontSize="14" Padding="8,6" Grid.ColumnSpan="2" BorderBrush="#FF85CAF1" />
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="8" Margin="25.281,1.239,0,2.451" HorizontalAlignment="Left" Width="129.441">
+
+                        <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#FF747272"><Run Text="Support Shortcut"/></TextBlock>
 
                         <Button Grid.Column="1" Grid.Row="0" 
                                 Background="White"
@@ -107,27 +110,34 @@
                                 Padding="3"
                                 Cursor="Hand"
                                 Click="ShowSupportShortcutHelp">
-                            <TextBlock Text="&#xE897;" 
-                             FontWeight="Bold"
-                             FontFamily="Segoe MDL2 Assets"></TextBlock>
+                            <TextBlock Text="&#xE897;"
+                             FontFamily="Segoe MDL2 Assets" FontSize="12" VerticalAlignment="Center" Foreground="#FF0083C2"/>
                         </Button>
                     </StackPanel>
-                    <CheckBox  Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" IsChecked="{Binding CreateSupportShortcut}" />
+                    <CheckBox Grid.Row="8" VerticalAlignment="Center" IsChecked="{Binding CreateSupportShortcut}" Height="15.098" Margin="0,3.606" HorizontalAlignment="Left" Width="18.492" BorderBrush="#FF0083C2" />
+                    <Path Data="M0.33333333,54.393667 L451.167,25.893332" Fill="#FFF4F4F5" Margin="-1.667,-5.457,-0.417,16.444" Stretch="Fill" Stroke="Black" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Height="0.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="275.417">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
 
                 </Grid>
-
-                <TextBlock TextWrapping="Wrap" Margin="40,25,40,0" Text="{Binding StatusMessage}" FontSize="14"></TextBlock>
-                <ProgressBar Height="25" Margin="40,10,40,0" Value="{Binding Progress}" Visibility="{Binding IsProgressVisible, Converter={StaticResource BooleanToVisibilityConverter}}"></ProgressBar>
+                <ProgressBar Height="25" Margin="40,10,40,0" Value="{Binding Progress}" Visibility="{Binding IsProgressVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </StackPanel>
 
         </Grid>
 
-        <DockPanel Margin="10" Grid.Row="2">
+        <DockPanel Margin="30.5,344.213,38,0" Grid.Row="1" Height="27.287" VerticalAlignment="Top">
             <Button DockPanel.Dock="Left" 
                     HorizontalAlignment="Left" 
                     Style="{StaticResource NormalButton}" 
                     Margin="5,0,0,0"
-                    Command="{Binding OpenLogsCommand}">
+                    Command="{Binding OpenLogsCommand}" FontSize="12" Padding="6,3,6,4">
                 Logs
             </Button>
 
@@ -135,7 +145,7 @@
                     HorizontalAlignment="Right" 
                     Style="{StaticResource NormalButton}" 
                     Margin="5,0,0,0"
-                    Click="CloseButton_Click">
+                    Click="CloseButton_Click" FontSize="12">
                 Close
             </Button>
             <Button DockPanel.Dock="Right" 
@@ -153,7 +163,7 @@
                     Content="{Binding InstallButtonText}"
                     Margin="5,0,0,0"
                     IsEnabled="{Binding IsReadyState}"
-                    Command="{Binding InstallCommand}">
+                    Command="{Binding InstallCommand}" FontSize="12">
             </Button>
         </DockPanel>
     </Grid>
