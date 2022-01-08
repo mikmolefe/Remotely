@@ -20,7 +20,7 @@
         Title="Chat Session" Height="450" Width="450" 
         Icon="{Binding Icon}"
         Loaded="Window_Loaded"
-        ContentRendered="Window_ContentRendered">
+        ContentRendered="Window_ContentRendered" Margin="10,0,0,0">
     
     <Window.DataContext>
         <ViewModels:ChatWindowViewModel />
@@ -42,20 +42,14 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Image Grid.Column="0" Height="50" Width="50"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                <TextBlock Grid.Column="1" Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center">
-                        <Run Text="{Binding ProductName}"></Run>
-                        <Run Text="Chat"></Run>
-                </TextBlock>
+                <TextBlock Grid.Column="1" Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" FontFamily="Calibri Light"><Run Language="en-gb" Text="Lentloro Support"/><Run Text=" "/><Run Text="Chat"/></TextBlock>
                 <Button Grid.Column="2" Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}"/>
                 <Button Grid.Column="3" Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" />
             </Grid>
         </Border>
 
-        <TextBlock Grid.Row="1" FontWeight="Bold" Foreground="DimGray" Margin="10,10,10,0" TextWrapping="Wrap">
-                <Run>Chat session with</Run>
-                <Run Text="{Binding OrganizationName}"></Run>
-        </TextBlock>
-        
+        <TextBlock Grid.Row="1" FontWeight="Bold" Foreground="#FF0083C2" Margin="10,10,10,10" TextWrapping="Wrap" FontFamily="Calibri Light" FontSize="28"><Run Text="Chat "/><Run Language="en-gb" Text="S"/><Run Text="ession with Support"/><Run Language="en-gb" Text=" Team"/></TextBlock>
+
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -89,11 +83,11 @@
                 </ScrollViewer>
             </Border>
             
-            <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FF85CAF1" />
 
             <TextBox Grid.Row="2"
                 FontSize="14"
-                Margin="5"
+                Margin="10,10,10,10"
                 Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 TextWrapping="Wrap" 
                 VerticalScrollBarVisibility="Auto" 
