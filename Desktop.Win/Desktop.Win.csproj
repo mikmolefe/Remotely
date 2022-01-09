@@ -9,12 +9,12 @@
     <RootNamespace>Remotely.Desktop.Win</RootNamespace>
     <ApplicationIcon>Assets\favicon.ico</ApplicationIcon>
     <Description>Desktop client for allowing your IT admin to provide remote support.</Description>
-    <Copyright>Copyright ©  2021 Translucency Software</Copyright>
+    <Copyright>Copyright © 2021 Lentloro (Pty) Ltd</Copyright>
     <PackageId>Remotely Desktop</PackageId>
-    <Authors>Jared Goodwin</Authors>
-    <Company>Translucency Software</Company>
+    <Authors>Lentloro (Pty) Ltd</Authors>
+    <Company>Lentloro (Pty) Ltd</Company>
     <Product>Remotely Desktop</Product>
-    <PackageProjectUrl>https://remotely.one</PackageProjectUrl>
+    <PackageProjectUrl>https://www.lentloro.co.za</PackageProjectUrl>
     <Platforms>AnyCPU;x86;x64</Platforms>
     <StartupObject>Remotely.Desktop.Win.App</StartupObject>
   </PropertyGroup>
