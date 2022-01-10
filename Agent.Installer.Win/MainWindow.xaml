@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterScreen"
         BorderBrush="#FFB2B2B2"
         BorderThickness="1"
-        Title="Remotely Installer" Height="463" Width="350"  Icon="{Binding Icon}">
+        Title="Remotely Installar" Height="463" Width="350"  Icon="{Binding Icon}">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
@@ -32,7 +32,7 @@
             <DockPanel Margin="10,0,0,0">
                 <DockPanel>
                     <Image Height="50" Width="50"  Margin="0,0,10,0" Source="{Binding Icon}"></Image>
-                    <TextBlock Foreground="{Binding TitleForegroundColor}" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" FontFamily="Calibri Light"><Run Text="Lentloro "/><Run Text="Support "/></TextBlock>
+                    <TextBlock Foreground="{Binding TitleForegroundColor}" FontSize="24" VerticalAlignment="Center" FontFamily="Calibri Light"><Run Text="Lentloro "/><Run Text="Support "/></TextBlock>
                 </DockPanel>
                 <Button Style="{StaticResource TitlebarButton}" Click="CloseButton_Click" Content="X" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" FontWeight="Normal" />
                 <Button Style="{StaticResource TitlebarButton}" Click="MinimizeButton_Click" Content="____" Foreground="{Binding TitleButtonForegroundColor}" Background="{Binding TitleBackgroundColor}" FontWeight="Normal"/>
@@ -40,7 +40,7 @@
         </Border>
         <Grid Grid.Row="1" Margin="10,15,10,0" HorizontalAlignment="Center" Height="388" VerticalAlignment="Top">
 
-            <StackPanel Margin="0,0,10,0" Height="297.5" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel Margin="0,0,10,0" Height="297.5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="338">
                 <TextBlock Style="{StaticResource SectionHeader}" Margin="25,10,0,10" FontWeight="Normal" FontFamily="Calibri Light" FontSize="28" Foreground="#FF0083C2" HorizontalAlignment="Left"><Run Text="Install the S"/><Run Text="ervice"/></TextBlock>
                 <TextBlock HorizontalAlignment="Left" Height="19.333" Margin="26,0,0,0" TextWrapping="Wrap" Width="240.25" Text="Unattended Remote Access Support" FontSize="14"/>
                 <Grid Margin="25,10,19.667,0">
