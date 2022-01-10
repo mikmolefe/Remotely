@@ -335,7 +335,7 @@ namespace Remotely.Agent.Installer.Win.ViewModels
                 (serverUri.Scheme != Uri.UriSchemeHttp && serverUri.Scheme != Uri.UriSchemeHttps))
             {
                 Logger.Write("ServerUrl is not valid.");
-                MessageBoxEx.Show("Server URL must be a valid Uri (e.g. https://app.remotely.one).", "Invalid Server URL", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxEx.Show("Server URL must be a valid Uri (e.g. https://support.lentloro.co.za).", "Invalid Server URL", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
