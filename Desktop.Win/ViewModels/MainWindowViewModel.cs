@@ -281,7 +281,7 @@ namespace Remotely.Desktop.Win.ViewModels
                 (serverUri.Scheme != Uri.UriSchemeHttp && serverUri.Scheme != Uri.UriSchemeHttps))
             {
                 Logger.Write("Server URL is not valid.");
-                MessageBox.Show("Server URL must be a valid Uri (e.g. https://app.remotely.one).", "Invalid Server URL", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Server URL must be a valid Uri (e.g. https://support.lentloro.co.za).", "Invalid Server URL", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
